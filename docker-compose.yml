@@ -14,11 +14,18 @@ services:
       timeout: 5s
       retries: 5
 
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      - directus
+
   directus:
     image: directus/directus:latest
     restart: unless-stopped
-    ports:
-      - "8055:8055"
     depends_on:
       postgres:
         condition: service_healthy
