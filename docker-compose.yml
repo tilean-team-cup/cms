@@ -49,6 +49,12 @@ services:
       AUTH_KEYCLOAK_ISSUER_URL: https://id.tilea.net/realms/tilea
       AUTH_KEYCLOAK_REDIRECT_ALLOW_LIST: https://cms.tilea.net
       AUTH_KEYCLOAK_ALLOW_PUBLIC_REGISTRATION: "false"
+      EMAIL_TRANSPORT: smtp
+      EMAIL_FROM: noreply@tilea.net
+      EMAIL_SMTP_HOST: smtp-relay.brevo.com
+      EMAIL_SMTP_PORT: "587"
+      EMAIL_SMTP_USER: ${BREVO_SMTP_USER}
+      EMAIL_SMTP_PASSWORD: ${BREVO_SMTP_PASSWORD}
     volumes:
       - directus_uploads:/directus/uploads
       - directus_extensions:/directus/extensions
