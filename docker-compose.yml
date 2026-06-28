@@ -48,7 +48,8 @@ services:
       AUTH_KEYCLOAK_CLIENT_SECRET: ${KEYCLOAK_CLIENT_SECRET}
       AUTH_KEYCLOAK_ISSUER_URL: https://id.tilea.net/realms/tilea
       AUTH_KEYCLOAK_REDIRECT_ALLOW_LIST: https://cms.tilea.net
-      AUTH_KEYCLOAK_ALLOW_PUBLIC_REGISTRATION: "false"
+      AUTH_KEYCLOAK_ALLOW_PUBLIC_REGISTRATION: "true"
+      AUTH_KEYCLOAK_DEFAULT_ROLE_ID: ${KEYCLOAK_DEFAULT_ROLE_ID}
       EMAIL_TRANSPORT: smtp
       EMAIL_FROM: noreply@tilea.net
       EMAIL_SMTP_HOST: smtp-relay.brevo.com
